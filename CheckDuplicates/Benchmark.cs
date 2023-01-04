@@ -16,9 +16,10 @@ namespace CheckDuplicates
         public Benchmark()
         {
         }
-        public Benchmark(int[]? elements)
+
+        public Benchmark(int[] elements)
         {
-            this.Elements ??= (this.Elements ?? elements) ?? Array.Empty<int>();
+            this.Elements = elements;
         }
         #endregion
 
