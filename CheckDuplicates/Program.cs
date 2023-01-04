@@ -7,7 +7,7 @@ using CheckDuplicates;
 
 Console.WriteLine($"Check Duplicates:{Environment.NewLine}");
 
-ManualConfig config = new ManualConfig().WithOptions(ConfigOptions.DisableOptimizationsValidator)
+var config = new ManualConfig().WithOptions(ConfigOptions.DisableOptimizationsValidator)
                                         .AddValidator(JitOptimizationsValidator.DontFailOnError)
                                         .AddLogger(ConsoleLogger.Default)
                                         .AddColumnProvider(DefaultColumnProviders.Instance);
@@ -16,7 +16,7 @@ ManualConfig config = new ManualConfig().WithOptions(ConfigOptions.DisableOptimi
 //Console.ReadKey();
 
 var elements = Benchmark.RandomArray(1, 100);
-Benchmark benchmark = new Benchmark(elements);
+var benchmark = new Benchmark(elements);
 
 Console.WriteLine($"Foreach: {benchmark.Foreach()}");
 Console.WriteLine($"LinqAny: {benchmark.LinqAny()}");

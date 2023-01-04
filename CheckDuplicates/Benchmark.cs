@@ -24,10 +24,9 @@ namespace CheckDuplicates
         #endregion
 
         #region Publics
-        public static int[] RandomArray(int min, int max)
-        {
-            return Enumerable.Repeat(min, max).Select(i => new Random().Next(min, max)).ToArray();
-        }
+        public static int[] RandomArray(int min, int max) => Enumerable.Repeat(min, max)
+                                                                       .Select(i => new Random().Next(min, max))
+                                                                       .ToArray();
 
         [GlobalSetup]
         public void Setup()
